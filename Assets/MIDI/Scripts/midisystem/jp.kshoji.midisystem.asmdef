@@ -1,0 +1,14 @@
+{
+    "name": "jp.kshoji.midisystem",
+    "rootNamespace": "jp.kshoji.midisystem",
+    "references": [],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
