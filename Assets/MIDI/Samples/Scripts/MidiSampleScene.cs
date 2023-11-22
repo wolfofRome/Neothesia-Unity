@@ -124,6 +124,7 @@ namespace jp.kshoji.unity.midi.sample
                     var note = NoteOnQueue.Dequeue();
                     for(int i = 0; i < MidiPlayer.alongKeys[i]; i ++)
                     {
+                        Debug.LogError(note.GetMessage()[1]);
                         if (note.GetMessage()[1] == MidiPlayer.alongKeys[i])
                             MidiPlayer.pass = true;
                     }

@@ -3718,6 +3718,7 @@ namespace jp.kshoji.unity.midi
             if (message is ShortMessage shortMessage)
             {
                 var midiMessage = shortMessage.GetMessage();
+                Debug.LogError("short message");
                 switch (shortMessage.GetStatus() & ShortMessage.MaskEvent)
                 {
                     case ShortMessage.NoteOff:
@@ -3733,6 +3734,7 @@ namespace jp.kshoji.unity.midi
                             midiMessage[0] & ShortMessage.MaskChannel, midiMessage[1], midiMessage[2]);
                         break;
                     case ShortMessage.ControlChange:
+                        Debug.LogError("control change+"+midiMessage[2]);
                         MidiManager.Instance.SendMidiControlChange(deviceId, 0,
                             midiMessage[0] & ShortMessage.MaskChannel, midiMessage[1], midiMessage[2]);
                         break;

@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections;
-using UnityEditor.Experimental.GraphView;
+//using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.SceneManagement;
@@ -10,7 +10,7 @@ public class MidiPlayer : MonoBehaviour
 {
 	[Header("References")]
 	public PianoKeyController PianoKeyDetector;
-	public static bool playAlong, pass;
+	public static bool playAlong = true, pass;
 	public GameObject noteImage, speedDisplay, timeDisplay;
 
 	[Header("Properties")]
@@ -197,7 +197,7 @@ public class MidiPlayer : MonoBehaviour
 					for(int i = sameLineNumber-1; i >= 0; i--)
 					{
                         alongKeys[i] = PianoKeyDetector.noteOrder.IndexOf(MidiNotes[_index - sameLineNumber + i + 1].Note);
-                        print(alongKeys[i]);
+                        //print(alongKeys[i]);
                     }
 				}
 
