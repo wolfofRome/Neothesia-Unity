@@ -144,6 +144,7 @@ public class PianoKey : MonoBehaviour
 				}
 				else
 				{
+
 					if (transform.eulerAngles.x <= PianoKeyController.PressAngleThreshold)
 						_depression = false;
 					
@@ -156,8 +157,10 @@ public class PianoKey : MonoBehaviour
 
 			if (PianoKeyController.ShowMIDIChannelColours)
 				Material.color = Color.Lerp(_colour, _originalColour, _Timer);
-			
+
 			_Timer += Time.deltaTime / _length * _speed;
+            if (_speed <= 0.1f)
+				_Timer += Time.deltaTime / _length * _speed*4;
 		}
 		else
 		{

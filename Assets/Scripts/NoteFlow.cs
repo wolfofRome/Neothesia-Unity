@@ -15,6 +15,9 @@ public class NoteFlow : MonoBehaviour
     void Update()
     {
         RectTransform rect = GetComponent<RectTransform>();
-        rect.localPosition = new Vector2(rect.localPosition.x, rect.localPosition.y - Time.deltaTime * flowSpeed);
+        if(!MidiPlayer.freeplay)
+            rect.localPosition = new Vector2(rect.localPosition.x, rect.localPosition.y - Time.deltaTime * flowSpeed);
+        else
+            rect.localPosition = new Vector2(rect.localPosition.x, rect.localPosition.y + Time.deltaTime * flowSpeed);
     }
 }
